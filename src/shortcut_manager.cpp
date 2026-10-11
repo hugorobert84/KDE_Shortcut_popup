@@ -293,8 +293,10 @@ void ShortcutManager::loadFromDesktopFiles()
             desktopFile.endGroup();
 
             QString appId = fileInfo.baseName();
-            QString mapKey = appId + "/_launch";
-            if (m_entryIndexMap.contains(mapKey) || m_entryIndexMap.contains("services][" + fileInfo.fileName() + "/_launch")) {
+            QString fileName = fileInfo.fileName();
+            if (m_entryIndexMap.contains(appId + "/_launch") ||
+                m_entryIndexMap.contains(fileName + "/_launch") ||
+                m_entryIndexMap.contains("services][" + fileName + "/_launch")) {
                 continue;
             }
 
@@ -315,7 +317,8 @@ void ShortcutManager::loadFromDesktopFiles()
             entry.iconName = !icon.isEmpty() ? icon : resolveIconForComponent(appId, entry.componentFriendly);
             buildSearchIndex(entry);
 
-            m_entryIndexMap[mapKey] = m_allShortcuts.size();
+            m_entryIndexMap[appId + "/_launch"] = m_allShortcuts.size();
+            m_entryIndexMap[fileName + "/_launch"] = m_allShortcuts.size();
             m_allShortcuts.append(entry);
         }
     }

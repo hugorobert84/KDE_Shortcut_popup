@@ -36,6 +36,11 @@ fi
 SHORTCUT_KEY="${1:-Meta+K}"
 echo "Registering global shortcut: $SHORTCUT_KEY"
 
+# Unregister any old/stale entry in kglobalaccel
+if command -v qdbus6 &>/dev/null; then
+    qdbus6 org.kde.kglobalaccel /kglobalaccel org.kde.KGlobalAccel.unregister "kde-shortcut-popup.desktop" "_launch" &>/dev/null || true
+fi
+
 if command -v kwriteconfig6 &>/dev/null; then
     kwriteconfig6 --file kglobalshortcutsrc --group "services" --group "kde-shortcut-popup.desktop" --key "_launch" "$SHORTCUT_KEY,$SHORTCUT_KEY,Launch KDE Shortcut Popup" --notify
 fi
