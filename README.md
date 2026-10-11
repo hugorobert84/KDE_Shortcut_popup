@@ -38,13 +38,13 @@ cd /home/hugorobert/Documents/Repos/KDE_Shortcut_popup
 This will:
 1. Compile the native Qt6 executable to `~/.local/bin/kde-shortcut-popup`.
 2. Install the desktop launcher to `~/.local/share/applications/kde-shortcut-popup.desktop`.
-3. Pre-assign the default global shortcut: <kbd>Meta</kbd> + <kbd>/</kbd>.
+3. Pre-assign the default global shortcut: <kbd>Meta</kbd> + <kbd>K</kbd>.
 
 ---
 
 ## How to Open & Use
 
-- **Global Shortcut**: Press <kbd>Meta</kbd> + <kbd>/</kbd> (or your chosen shortcut) from anywhere on your desktop.
+- **Global Shortcut**: Press <kbd>Meta</kbd> + <kbd>K</kbd> (or your chosen shortcut) from anywhere on your desktop.
 - **Application Launcher**: Search for **KDE Shortcut Popup** in the Application Menu or KRunner.
 - **Terminal**: Run `kde-shortcut-popup`.
 

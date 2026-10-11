@@ -32,16 +32,17 @@ if command -v update-desktop-database &>/dev/null; then
     update-desktop-database "$APP_DIR" 2>/dev/null || true
 fi
 
-# 5. Register global shortcut (Default: Meta+/)
-SHORTCUT_KEY="${1:-Meta+/}"
+# 5. Register global shortcut (Default: Meta+K)
+SHORTCUT_KEY="${1:-Meta+K}"
 echo "Registering global shortcut: $SHORTCUT_KEY"
 
 if command -v kwriteconfig6 &>/dev/null; then
     kwriteconfig6 --file kglobalshortcutsrc --group "services" --group "kde-shortcut-popup.desktop" --key "_launch" "$SHORTCUT_KEY,$SHORTCUT_KEY,Launch KDE Shortcut Popup" --notify
 fi
 
-# Reload kglobalaccel DBus if running
+# Reload kglobalaccel and KWin shortcuts
 if command -v qdbus6 &>/dev/null; then
+    qdbus6 org.kde.KWin /KWin reconfigure &>/dev/null || true
     qdbus6 org.kde.KGlobalAccel /kglobalaccel org.freedesktop.DBus.Peer.Ping &>/dev/null || true
 fi
 
