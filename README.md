@@ -31,7 +31,7 @@ A fast, minimalist shortcut reference and search popup tailored specifically for
 To install the popup and register it in KDE Plasma:
 
 ```bash
-git clone https://github.com/<username>/KDE_Shortcut_popup.git
+git clone https://github.com/hugorobert84/KDE_Shortcut_popup.git
 cd KDE_Shortcut_popup
 ./scripts/install.sh
 ```
