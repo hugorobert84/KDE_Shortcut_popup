@@ -2,7 +2,7 @@
 
 A fast, minimalist shortcut reference and search popup tailored specifically for KDE Plasma 6 (Wayland & X11).
 
-![KDE Shortcut Popup Preview](file:///home/hugorobert/.gemini/antigravity/brain/93661854-8682-4074-8d16-28d3ce9fa17f/popup_centered.png)
+<img width="698" height="553" alt="image" src="https://github.com/user-attachments/assets/342e3c86-85bc-44bc-9b48-69954d1dd43b" />
 
 ## Highlights
 
